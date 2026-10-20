@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dynamic product explorer powered by JavaScript and REST API">
+  <title>Product Explorer | Dynamic API Client</title>
+  <link rel="stylesheet" href="style.css">
+  <script type="module" src="app.js"></script>
+</head>
+<body>
+  <header class="header">
+    <h1>Product Explorer</h1>
+    <p>Discover products with live API data</p>
+  </header>
+
+  <main class="container">
+    <section class="toolbar">
+      <input
+        type="search"
+        id="searchInput"
+        placeholder="Search products..."
+        aria-label="Search products"
+      >
+
+      <select id="categoryFilter" aria-label="Filter by category">
+        <option value="all">All Categories</option>
+      </select>
+
+      <select id="sortFilter" aria-label="Sort products">
+        <option value="default">Default Order</option>
+        <option value="price-asc">Price: Low to High</option>
+        <option value="price-desc">Price: High to Low</option>
+        <option value="name-asc">Name: A to Z</option>
+      </select>
+    </section>
+
+    <div id="errorBanner" class="error-banner" role="alert" hidden></div>
+
+    <p id="statusMessage" role="status" aria-live="polite">
+      Loading products...
+    </p>
+
+    <section
+      id="productGrid"
+      class="product-grid"
+      aria-label="Products"
+    ></section>
+
+    <p id="emptyMessage" hidden>No products found.</p>
+  </main>
+
+  <footer class="footer">
+    <p>Built with JavaScript ES6+ and REST API</p>
+  </footer>
+</body>
+</html>
